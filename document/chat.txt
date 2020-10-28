@@ -1,0 +1,136 @@
+1. Tổng quan kiến trúc hệ thống. Gồm những phần nào? Tại sao chia như vậy?
+2.	Phương thức deploy cho từng phần
+3.	Cấu trúc dữ liệu sử dụng.
+4.	Phương thức liên kết giữa các service là gì? Có cách nào khác k?
+5.	Lí giải kiến trúc, tại sao sử dụng Redis, tại sao sử dụng Kafka? Tác dụng của từng phần.
+
+
+
+1. Kiến trúc hệ thống gồm các phần: 
+
+  - Websket connection service: quản lý các websocket
+  - Message service: lưu trữ tin nhắn
+  - User service: quản lý user
+  - Channel service: quản lý channel, members
+  - Middleware service: giao tiếp giữa user với hệ thống REST => grpc
+  - Money service: quản lý tiền, nạp, rút, chuyển khoản
+  - Friend service: quản lý danh sách bạn bè // Chưa kịp viết
+  - Redis: quản lý user session, pub/sub, // cache
+  - Kafka: produce, consume tin nhắn
+  
+  - Frontend: user sử dụng react
+  => Chia theo hướng dịch vụ, mỗi thành phần thực thực hiện các công việc riêng.
+
+2. 
+
+   * Các thư mục:
+    ├── quickchat-channels
+    ├── quickchat-conn
+    ├── quickchat-frontend-react
+    ├── quickchat-messages
+    ├── quickchat-middleware
+    ├── quickchat-moneys
+    └── quickchat-users
+    
+  * Tất cả các service backend được được viết bằng C++17, build system cmake, tên file config: 'config.json'
+  * Build command: 
+    ```
+    cd <service-folder>
+    mkdir build
+    cd build
+    cmake ..
+    cmake --build . -DCMAKE_BUILD_TYPE=Release
+    ```
+  * Run command:
+    ```
+    ./<binary-file>
+    ```
+   
+
+  
+  - Websket connection service: 
+    + Công nghệ sử sụng: websocket, redis, kafka  
+    + Build dependency: nlohmann_json, CppKafka, GTest, Threads, fmt, spdlog, redis-plus-plus, hire-redis, protobuf
+    + Config file:
+    ```
+    {
+  "appName": "quickchat-conn",
+
+  "channel-service" : {
+    "uri" : "127.0.0.1:4001",
+    "apikey" : "channel-service-key"
+  },
+
+  "redis" : {
+    "uri" : "tcp://127.0.0.1:6379",
+    "client" : {
+    },
+    "subscriber" : {
+      "channels" : ["quickchat-conn:messages:*", "quickchat-conn:notifications:*"]
+    },
+    "publisher" : {
+      "status" : "quickchat-conn:messages:status"
+    }
+  },
+
+  "kafka" : {
+    "config" : {
+      "bootstrap.servers" : "127.0.0.1:9092",
+      "topic" : {
+        "chat" : "quickchat-messages.chat",
+        "seen" : "quickchat-messages.seen"
+      }
+    }
+  },
+
+  "websocket" : {
+    "port" : 9001,
+    "maxPayloadLength" : 16384,
+    "idleTimeout" : 3600,
+    "maxBackpressure" : 1048576
+  },
+
+  "snowflake" : {
+    "workerid" : 1,
+    "datacenterid" : 1
+  }
+}
+    ```
+  - Message service, User service, Channel service, Money service:
+    + Công nghệ sử sụng: grpc, redis, kafka  
+
+  - Middleware service:
+    + Công nghệ sử sụng: REST, grpc, redis
+  - Redis: chaỵ trên port mặc định: 6379, 
+  - Kafka: 
+  Tạo topic
+  ```
+  kafka-topics.sh --create --topic quickchat-message.chat --bootstrap-server localhost:9092
+  kafka-topics.sh --create --topic quickchat-message.seen --bootstrap-server localhost:9092
+  ```
+  
+3.	Cấu trúc dữ liệu sử dụng.
+    - Array, Hashmap, hashset
+4.	Phương thức liên kết giữa các service là gì? Có cách nào khác k?
+    - grpc
+    - pubsub: redis
+    - message queue: kafka
+    
+    - Cách khác: thay vì grpc có thể sử dụng REST, pubsub redis có thể thay thế bằng kafka
+
+5.	Lí giải kiến trúc, tại sao sử dụng Redis, tại sao sử dụng Kafka? Tác dụng của từng phần.
+    
+    - Luồng tin nhắn 
+    
+              Websocket                       produce                    publish                       Websocket
+      Client ===========> Connection Service =========> Message service =========> Connection Service ==========> Client
+      
+    - Websocket connection service sẽ chạy nhiều instance, một user có thể kết nối trên một instance và
+      gửi tin nhắn đến 1 user nằm trên instance khác. Các websocket connection service đều phải nhận được
+      tin nhắn khi user gửi đến 1 instance bất kỳ. Cần 1 cơ chế pub/sub message 
+      => sử dụng redis để publish tin nhắn đến các websocket connection service
+      
+    - Message service cũng có thể chạy nhiều instance, nhưng 1 tin nhắn chỉ được 1 instance xử lý (lưu vào database),
+      nên ta sử dụng 1 message queue cho message service (1 consumer group) => kafka.
+      
+  

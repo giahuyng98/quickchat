@@ -1,0 +1,76 @@
+syntax="proto3";
+
+import "account.proto";
+import "history.proto";
+import "google/protobuf/timestamp.proto";
+
+package srv;
+
+service MoneyService {
+
+  rpc CreateAccount(CreateAccountRequest)
+    returns (msg.Account) {}
+
+  rpc GetBalance(GetBalanceRequest)
+    returns (msg.Account) {}
+
+  rpc Deposit(DepositRequest)
+    returns (msg.Account) {}
+  
+  rpc WithDraw(WithDrawRequest)
+    returns (msg.Account) {}
+  
+  rpc Transfer(TransferRequest) 
+    returns (msg.Account) {}
+
+  rpc History(HistoryRequest)
+    returns (HistoryReponse) {}
+
+  //system
+  //rpc CreateTransaction(CreateTransactionRequest)
+  //  returns (CreateTransactionReponse) {}
+  //
+}
+
+message CreateAccountRequest {
+  uint64 user_id = 1;
+  string type = 2;
+}
+
+message DepositRequest {
+  string id = 1;
+  uint64 user_id = 2;
+  uint64 amount = 3;
+  google.protobuf.Timestamp create_at = 4;
+}
+
+message WithDrawRequest {
+  string id = 1;
+  uint64 user_id = 2;
+  uint64 amount = 3;
+  google.protobuf.Timestamp create_at = 4;
+}
+
+message GetBalanceRequest {
+  uint64 user_id = 1;
+  google.protobuf.Timestamp create_at = 2;
+}
+
+message TransferRequest {
+  string id = 1;
+  uint64 user_id = 2;
+  uint64 to_user = 3;
+  uint64 amount = 4;
+  string message = 5;
+  google.protobuf.Timestamp create_at = 6;
+}
+
+message HistoryRequest {
+  uint64 user_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message HistoryReponse {
+  repeated msg.History histories = 1;
+}

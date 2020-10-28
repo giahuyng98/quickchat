@@ -1,0 +1,9 @@
+
+syntax="proto3";
+package msg;
+
+message Account {
+  uint64 user_id = 1;
+  int64 balance = 2;
+  string type = 3;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="996802393">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="toInt" lineNumber="4"/>
+    <functiondecl functionName="strVecToInt" lineNumber="10"/>
+    <functioncall functionName="begin"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="from_chars"/>
+    <functioncall functionName="reserve"/>
+    <functioncall functionName="result"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="toInt"/>
+    <functioncall functionName="transform"/>
+  </FileInfo>
+</analyzerinfo>

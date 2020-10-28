@@ -1,0 +1,44 @@
+syntax = "proto3";
+//import "google/protobuf/timestamp.proto";
+import "message.proto";
+
+package srv;
+
+service MessageService {
+
+  rpc GetMessage(GetMessageRequest) 
+    returns (GetMessageReponse);
+
+  rpc GetMessages(GetMessagesRequest)
+    returns (GetMessagesReponse);
+
+  rpc GetLastMessage(GetLastMessageRequest)
+    returns (GetLastMessageReponse);
+}
+
+message GetMessageRequest {
+  uint64 channel_id = 1;
+  uint64 message_id = 2;
+}
+
+message GetMessageReponse {
+  msg.Message message = 1;
+}
+
+message GetMessagesRequest {
+  uint64 channel_id = 1;
+  uint64 message_id = 2;
+  int32 count = 3;
+}
+
+message GetMessagesReponse {
+  repeated msg.Message messages = 1;
+}
+
+message GetLastMessageRequest {
+  uint64 channel_id = 1;
+}
+
+message GetLastMessageReponse {
+  msg.Message message = 1;
+}

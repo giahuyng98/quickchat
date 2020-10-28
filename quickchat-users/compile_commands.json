@@ -1,0 +1,52 @@
+[
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/main.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/main.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/main.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/user_info.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_info.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_info.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/user_dao_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_dao_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_dao_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/gen_id_service_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/gen_id_service_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/gen_id_service_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/session_mgr_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/session_mgr_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/session_mgr_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/user_controller.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_controller.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_controller.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/logger.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/logger.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/logger.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/user.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/user_service.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_service.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_service.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-user.dir/src/user_service.grpc.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_service.grpc.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-users/src/user_service.grpc.pb.cc"
+}
+]

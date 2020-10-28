@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/cmake",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/main.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/src/main.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/src/main.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/cmake",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/gen_id_service_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/src/gen_id_service_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/src/gen_id_service_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/cmake",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/logger.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/src/logger.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/src/logger.cpp"
+}
+]

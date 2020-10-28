@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="792596017">
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="to_json" lineNumber="8"/>
+    <functiondecl functionName="from_json" lineNumber="14"/>
+    <functioncall functionName="at"/>
+    <functioncall functionName="email"/>
+    <functioncall functionName="fullname"/>
+    <functioncall functionName="get_to"/>
+    <functioncall functionName="id"/>
+    <functioncall functionName="json"/>
+    <functioncall functionName="password"/>
+    <functioncall functionName="userInfo"/>
+    <functioncall functionName="username"/>
+  </FileInfo>
+</analyzerinfo>

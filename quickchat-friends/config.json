@@ -1,0 +1,23 @@
+{
+  "appName": "quickchat-friends",
+
+  "rpc" : {
+    "uri" : "127.0.0.1:4005",
+    "apikey" : "friend-service-key"
+  },
+
+  "mysql" : {
+    "db": "cchat-friends",
+    "server": "127.0.0.1",
+    "user": "giahuy",
+    "password": "123"
+  },
+
+  "redis" : {
+    "uri" : "tcp://127.0.0.1:6379"
+  },
+  "snowflake" : {
+    "workerid" : 1,
+    "datacenterid" : 1
+  }
+}

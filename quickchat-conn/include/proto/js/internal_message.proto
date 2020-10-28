@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "chat_content.proto";
+import "history.proto";
+
+package msg;
+
+message Chat {
+  uint64 user_id = 1 [jstype=JS_STRING];
+  uint64 channel_id = 2 [jstype=JS_STRING];
+  uint64 message_id = 3 [jstype=JS_STRING] ;
+  ChatContent content = 4;
+  google.protobuf.Timestamp timestamp = 5;
+}
+
+message Seen {
+  uint64 user_id = 1 [jstype=JS_STRING];
+  uint64 channel_id = 2 [jstype=JS_STRING];
+  uint64 message_id = 3 [jstype=JS_STRING];
+  google.protobuf.Timestamp timestamp = 4;
+}
+
+message Status {
+  uint64 user_id = 1 [jstype=JS_STRING];
+  Type type = 2;
+
+  enum Type {
+    UNKNOWN = 0;
+    ONLINE = 1;
+    OFFLINE = 2;
+    BUSY = 3;
+    NO_BOTHER = 4;
+    reserved 5 to 9;
+  }
+  google.protobuf.Timestamp timestamp = 3;
+}
+
+message Typing {
+  uint64 user_id = 1 [jstype=JS_STRING];
+  uint64 channel_id = 2 [jstype=JS_STRING];
+  bool is_typing = 3; 
+  google.protobuf.Timestamp timestamp = 4;
+}
+
+message Notification {
+  oneof data {
+    FriendNotification friend = 1;
+    GroupNotification group = 2;
+    MoneyNotification money = 3;
+    TextNotification text = 4;
+  }
+}
+
+message FriendNotification {
+  uint64 from_user_id = 1 [jstype=JS_STRING];
+  uint64 to_user_id = 2 [jstype=JS_STRING];
+  Status status = 3;
+
+  enum Status {
+    UNKNOWN = 0;
+    SENT = 1;
+    ACCEPT = 2;
+    DECLINE = 3;
+    BLOCK = 4;
+    reserved 5 to 9;
+  }
+}
+message GroupNotification {
+
+}
+
+message MoneyNotification {
+  msg.History transaction = 1;
+}
+
+message TextNotification {
+
+}

@@ -1,0 +1,47 @@
+{
+  "appName": "quickchat-messages",
+  "port": 3002,
+
+  "rpc" :{
+    "uri" : "127.0.0.1:4002",
+    "apikey" : "message-service-key"
+  },
+
+  "redis": {
+    "uri" : "tcp://127.0.0.1:6379",
+    "pub-channel" : "quickchat-conn",
+    "client" : {
+      "host": "127.0.0.1",
+      "port": 6379
+    },
+    "publisher" : {
+      "chat" : "quickchat-conn:messages:chat",
+      "seen" : "quickchat-conn:messages:seen"
+    }
+  },
+  "mysql": {
+    "db": "cchat-messages",
+    "server": "localhost",
+    "user": "giahuy",
+    "password": "123"
+  },
+  "snowflake": {
+    "workerid": 1,
+    "datacenterid": 1,
+    "epoch": 1599350400
+  },
+
+  "kafka": {
+    "config" : {
+      "bootstrap.servers" : "127.0.0.1:9092",
+      "group.id" : "quickchat-messages",
+      "enable.auto.commit" : "false"
+    },
+    "consumer" : {
+      "topics" : {
+        "chat" : "quickchat-messages.chat",
+        "seen" : "quickchat-messages.seen"
+      }
+    }
+  }
+}

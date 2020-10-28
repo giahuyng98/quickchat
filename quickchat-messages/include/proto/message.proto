@@ -1,0 +1,36 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "chat_content.proto";
+
+package msg;
+
+enum ReactionType {
+  UNKNOWN = 0;
+  LOVE = 1;
+  HAHA = 2;
+  SURPRISE = 3;
+  SAD = 4;
+  ANGRY = 5;
+  LIKE = 6;
+  DISLIKE = 7;
+}
+
+message Message {
+  uint64 channel_id = 1;
+  uint64 message_id = 2;
+  uint64 user_id = 3;
+  msg.ChatContent content = 4;
+  repeated Seen seens = 5;
+  repeated Reaction reactions = 6;
+  google.protobuf.Timestamp create_at = 7;
+
+  message Reaction {
+    uint64 user_id = 1;
+    ReactionType type = 2;
+  }
+
+  message Seen {
+    uint64 user_id = 1;
+    google.protobuf.Timestamp seen_at = 2;
+  }
+}

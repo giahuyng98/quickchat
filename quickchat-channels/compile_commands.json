@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/main.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/main.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/main.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/channel.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/channel.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/channel.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/channel_service.grpc.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/channel_service.grpc.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/channel_service.grpc.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/channel_service.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/channel_service.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/channel_service.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/gen_id_service_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/gen_id_service_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/gen_id_service_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/repository_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/repository_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/repository_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-channels.dir/src/logger.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/logger.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-channels/src/logger.cpp"
+}
+]

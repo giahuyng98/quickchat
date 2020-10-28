@@ -1,0 +1,22 @@
+{
+  "appName": "quickchat-moneys",
+  "port": 3003,
+
+  "rpc" :{
+    "uri" : "127.0.0.1:4004",
+    "apikey" : "money-service-key"
+  },
+
+  "mysql": {
+    "db": "cchat-moneys",
+    "server": "localhost",
+    "user": "giahuy",
+    "password": "123"
+  },
+  "snowflake": {
+    "workerid": 1,
+    "datacenterid": 1,
+    "epoch": 1599350400
+  }
+  
+}

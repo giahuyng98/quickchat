@@ -1,0 +1,27 @@
+syntax="proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package msg;
+
+message Channel {
+  uint64 id = 1;
+  string name = 2;
+  string type = 3;
+  google.protobuf.Timestamp create_at = 4;
+  repeated Member members = 5;
+
+  message Member {
+    uint64 user_id = 1;
+    string role = 2;
+    google.protobuf.Timestamp join_at = 3;
+  }
+
+  enum Type {
+    UNKNOWN = 0;
+    PRIVATE = 1;
+    GROUP = 2;
+    reserved 3 to 5;
+  }
+}
+

@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-friends.dir/src/main.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/main.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/main.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-friends.dir/src/gen_id_service_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/gen_id_service_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/gen_id_service_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-friends.dir/src/logger.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/logger.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/logger.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-friends.dir/src/friend_service.grpc.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/friend_service.grpc.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/friend_service.grpc.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-friends.dir/src/friend_service.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/friend_service.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/friend_service.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/mysql::mysql -std=gnu++17 -o CMakeFiles/quickchat-friends.dir/src/user.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/user.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-friends/src/user.pb.cc"
+}
+]

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package msg;
+
+message ChatContent {
+  string content = 1; //<amount>,<message>
+  uint64 reply_to = 2 [ jstype = JS_STRING ];
+  //repeated uint64 attachments = 3 [ jstype = JS_STRING ];
+  ChatContentType type = 4;
+
+  enum ChatContentType {
+    TEXT = 0;
+    EMOJI = 1;
+    MONEY = 2; // check
+    reserved 3 to 14;
+  }
+}
+

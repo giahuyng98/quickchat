@@ -1,0 +1,17 @@
+syntax="proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package msg;
+
+message History {
+  uint64 transaction_id = 1 [jstype=JS_STRING];;
+  uint64 user_id = 2 [jstype=JS_STRING];;
+  string request_id = 3;
+  string type = 4;
+  string to_user = 5;
+  int64 amount = 6 [jstype=JS_STRING];;
+  string status = 7;
+  string message = 8;
+  google.protobuf.Timestamp create_at = 9;
+}

@@ -1,0 +1,15 @@
+main.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/main.cpp
+body_parser.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/body_parser.cpp
+channel_service.grpc.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/channel_service.grpc.pb.cc
+channel.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/channel.pb.cc
+channel_service.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/channel_service.pb.cc
+util.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/util.cpp
+user_info.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/user_info.cpp
+payload.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/payload.pb.cc
+chat_content.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/chat_content.pb.cc
+message.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/message.pb.cc
+message_service.grpc.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/message_service.grpc.pb.cc
+message_service.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/message_service.pb.cc
+user.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/user.pb.cc
+user_service.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/user_service.pb.cc
+user_service.grpc.pb.a1::/home/giahuy/Documents/ZaloPay/quickchat/quickchat-middleware/src/user_service.grpc.pb.cc

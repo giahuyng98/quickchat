@@ -1,0 +1,16 @@
+syntax="proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package msg;
+
+message Friend {
+  uint64 user_id = 1; 
+  // let other services fill these fields
+  string username = 2;
+  string fullname = 3;
+  string email = 4;
+  string status = 5;
+
+  google.protobuf.Timestamp create_at = 6;
+}

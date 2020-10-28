@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/main.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/main.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/main.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/util.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/util.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/util.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/body_parser.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/body_parser.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/body_parser.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/user_info.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/user_info.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/user_info.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/internal_message.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/internal_message.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/internal_message.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/payload.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/payload.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/payload.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/chat_content.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/chat_content.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/chat_content.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/user.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/user.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/user.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/channel.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/channel.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/channel.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/channel_service.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/channel_service.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/channel_service.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/channel_service.grpc.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/channel_service.grpc.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/channel_service.grpc.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DCARES_STATICLIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -D__CLANG_SUPPORT_DYN_ANNOTATION__ -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/uWebSockets -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/spdlog::spdlog -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/build/_deps/uwebsockets-src/uSockets/src -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/quickchat-conn.dir/src/history.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/history.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-conn/src/history.pb.cc"
+}
+]

@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    participant Client
+    participant Websocket Server
+    participant Kafka 
+    participant Message service
+    participant Message database
+    participant Redis Pub/Sub
+    participant Channel Service
+
+    Client->>+Websocket Server: connect
+    Websocket Server-->>Client: authen & accept
+    Client->>+Websocket Server: send message
+    Websocket Server->>Kafka: produce message
+    Kafka->>+Message service: consume group
+    Message service->>+Message database: save to database
+    Message service->>Redis Pub/Sub: publish message
+    Redis Pub/Sub-->>+Websocket Server: subscribe
+    Websocket Server->>+Channel Service: get member channel
+    Websocket Server-->>+Client: send message back
+
+    
+    

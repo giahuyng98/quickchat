@@ -1,0 +1,34 @@
+{
+  "appName": "quickchat-channel",
+
+  "rpc" : {
+    "uri" : "127.0.0.1:4001",
+    "apikey" : "channel-service-key"
+  },
+
+  "mysql": {
+    "db": "cchat-channels",
+    "server": "localhost",
+    "user": "giahuy",
+    "password": "123"
+  },
+
+
+  "redis" : {
+    "uri" : "tcp://127.0.0.1:6379",
+    "client" : {
+    },
+    "subscriber" : {
+    }
+  },
+
+  "kafka" : {
+    "config" : {
+      "bootstrap.servers" : "127.0.0.1:9092"
+    }
+  },
+  "snowflake" : {
+    "workerid" : 1,
+    "datacenterid" : 1
+  }
+}

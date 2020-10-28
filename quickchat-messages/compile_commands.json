@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/main.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/main.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/main.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/gen_id_service_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/gen_id_service_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/gen_id_service_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/logger.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/logger.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/logger.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/message_info.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/message_info.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/message_info.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/message_dao_impl.cpp.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/message_dao_impl.cpp",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/message_dao_impl.cpp"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/internal_message.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/internal_message.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/internal_message.pb.cc"
+},
+{
+  "directory": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DFMT_LOCALE -DJSON_USE_IMPLICIT_CONVERSIONS=1 -DSPDLOG_COMPILED_LIB -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/include/proto -I/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/mysql::mysql -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src -isystem /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/build/_deps/uwebsockets-src/uSockets/src -std=gnu++17 -o CMakeFiles/quickchat-messages.dir/src/chat_content.pb.cc.o -c /home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/chat_content.pb.cc",
+  "file": "/home/giahuy/Documents/ZaloPay/quickchat/quickchat-messages/src/chat_content.pb.cc"
+}
+]

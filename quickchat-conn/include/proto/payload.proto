@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "internal_message.proto";
+
+package msg;
+
+message WebSocketOutgoingMessage {
+  oneof type {
+    msg.Chat chat = 1;
+    msg.Seen seen = 2;
+    msg.Status status = 3;
+    msg.Typing typing = 4;
+    msg.Notification notification = 6;
+  }
+}
+
+
+message WebSocketIncomingMessage {
+  oneof type {
+    msg.Chat chat = 1;
+    msg.Seen seen = 2;
+    msg.Status status = 3;
+    msg.Typing typing = 4;
+  }
+}
+

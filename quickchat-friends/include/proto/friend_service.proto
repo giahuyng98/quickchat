@@ -1,0 +1,55 @@
+syntax="proto3";
+
+import "friend.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/empty.proto";
+
+package srv;
+
+service FriendService {
+
+  rpc ListUserFriends(ListUserFriendsRequest)
+    returns (ListUserFriendsReponse) {}
+
+  rpc CreateFriend(BaseRequest)
+    returns (BaseReponse) {}
+
+  rpc DeleteFriend(BaseRequest)
+    returns (BaseReponse) {}
+
+  rpc ChangeFriendStatus(ChangeFriendStatusRequest)
+    returns (BaseReponse) {}
+}
+
+message ListUserFriendsRequest {
+  uint64 user_id = 1;
+}
+
+message ListUserFriendsReponse {
+  repeated msg.Friend friends = 1;
+  repeated msg.Friend sent_requests = 2;
+  repeated msg.Friend received_request = 3;
+}
+
+message BaseRequest {
+  uint64 from = 1;
+  uint64 to = 2;
+
+  google.protobuf.Timestamp create_at = 3;
+}
+
+message BaseReponse {
+  uint64 from = 1;
+  uint64 to = 2;
+  google.protobuf.Timestamp create_at = 3;
+  string message = 4;
+}
+
+message ChangeFriendStatusRequest {
+  uint64 from = 1;
+  uint64 to = 2;
+  string status = 3;
+  google.protobuf.Timestamp create_at = 4;
+}
+

@@ -1,0 +1,3 @@
+/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/cmake/CMakeFiles/rebuild_cache.dir
+/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/cmake/CMakeFiles/edit_cache.dir
+/home/giahuy/Documents/ZaloPay/quickchat/quickchat-moneys/cmake/CMakeFiles/quickchat-messages.dir

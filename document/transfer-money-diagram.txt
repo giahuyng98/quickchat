@@ -1,0 +1,26 @@
+sequenceDiagram
+    autonumber
+    participant Client
+    participant Websocket Server
+    participant Kafka 
+    participant Middleware service
+    participant Message service
+    participant Message database
+    participant Redis Pub/Sub
+    participant Channel service
+    participant Money service
+    participant Money database
+
+    Client->>+Middleware service: transfer money (RESTful API)
+    Middleware service->>Money service: transfer money (gRPC)
+    Money service->>Money database: save transaction
+    Middleware service-->>Kafka: produce transfer message
+    Kafka->>+Message service: consume group
+    Message service->>+Message database: save to database
+    Message service->>Redis Pub/Sub: publish message
+    Redis Pub/Sub-->>+Websocket Server: subscribe
+    Websocket Server->>+Channel service: get member channel
+    Websocket Server-->>+Client: send transfer message
+
+    
+    

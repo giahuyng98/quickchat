@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+import "channel.proto";
+
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/empty.proto";
+
+package srv;
+
+service ChannelService {
+
+  rpc GetChannel(GetChannelRequest)
+    returns (msg.Channel) {}
+
+  rpc CreateChannel(CreateChannelRequest)
+    returns (msg.Channel) {}
+
+  rpc UpdateChannel(UpdateChannelRequest)
+    returns (msg.Channel) {}
+
+  rpc DeleteChannel(DeleteChannelRequest)
+    returns (google.protobuf.Empty) {}
+
+// custom
+  rpc ListUserChannels(ListUserChannelsRequest) 
+    returns (ListUserChannelsReponse) {}
+
+  rpc CheckIsMemberChannel(CheckIsMemberChannelRequest)
+    returns (CheckIsMemberChannelReponse) {}
+
+  rpc CheckIsMemberAndGetChannel(CheckIsMemberAndGetChannelRequest)
+    returns (CheckIsMemberAndGetChannelReponse) {};
+
+  rpc AddMembersChannel(AddMembersChannelRequest)
+    returns (msg.Channel) {}
+
+  rpc RemoveMemberChannel(RemoveMemberChannelRequest) 
+    returns (msg.Channel) {}
+}
+
+message GetChannelRequest {
+  uint64 channel_id = 1;
+}
+
+message CreateChannelRequest {
+  msg.Channel channel = 1;
+}
+
+message UpdateChannelRequest {
+  msg.Channel channel = 1;
+  google.protobuf.FieldMask field_mask = 2;
+}
+
+message DeleteChannelRequest {
+  uint64 channel_id = 1;
+}
+
+message ListUserChannelsRequest {
+  uint64 user_id = 1;
+}
+
+message ListUserChannelsReponse {
+  repeated msg.Channel channels = 1;
+}
+
+message CheckIsMemberChannelRequest {
+  uint64 user_id = 1;
+  uint64 channel_id = 2;
+}
+
+message CheckIsMemberChannelReponse {
+  bool is_in = 1;
+  uint64 channel_id = 2;
+  uint64 user_id = 3;
+}
+
+message CheckIsMemberAndGetChannelRequest {
+  uint64 channel_id = 1;
+  uint64 user_id = 2;
+}
+
+message CheckIsMemberAndGetChannelReponse {
+  bool is_in = 1;
+  msg.Channel channel = 2;
+}
+
+message AddMembersChannelRequest {
+  uint64 channel_id = 1;
+  repeated msg.Channel.Member members = 2;
+}
+
+message RemoveMemberChannelRequest {
+  uint64 channel_id = 1;
+  uint64 user_id = 2;
+}

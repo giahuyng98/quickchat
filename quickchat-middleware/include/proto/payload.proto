@@ -1,0 +1,77 @@
+syntax="proto3";
+
+import "message.proto";
+import "channel.proto";
+import "account.proto";
+import "history.proto";
+import "user.proto";
+import "friend.proto";
+
+package msg;
+
+message ChatItem {
+  msg.Channel channel = 1;
+  msg.Message last_message = 2;
+}
+
+message ChatList {
+  int32 error = 1;
+  string message = 2;
+  repeated ChatItem data = 3;
+}
+
+message MessageList {
+  int32 error = 1;
+  string message = 2;
+  repeated msg.Message data = 3;
+}
+
+message UserReponse {
+  int32 error = 1;
+  string message = 2;
+  Data data = 3;
+
+  message Data {
+    uint64 id = 1;
+    string username = 2;
+    string email = 3;
+    string fullname = 4;
+    string session_id = 5;
+  }
+}
+
+message ChannelReponse {
+  int32 error = 1;
+  string message = 2;
+  msg.Channel data = 3;
+}
+
+message AccountReponse {
+  int32 error = 1;
+  string message = 2;
+  msg.Account data = 3;
+}
+
+message HistoryReponse {
+  int32 error = 1;
+  string message = 2;
+  repeated msg.History data = 3;
+}
+
+message FriendReponse {
+  int32 error = 1;
+  string message = 2;
+  msg.Friend data = 3;
+}
+
+message FriendListReponse {
+  int32 error = 1;
+  string message = 2;
+  Data data = 3;
+
+  message Data {
+    repeated msg.Friend friends = 1;
+    repeated msg.Friend sent_requests = 2;
+    repeated msg.Friend received_request = 3;
+  }
+}

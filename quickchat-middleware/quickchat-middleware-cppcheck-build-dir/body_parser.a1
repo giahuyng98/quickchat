@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2744443243">
+  <FileInfo check="CheckUnusedFunctions">
+    <functioncall functionName="BodyParser"/>
+    <functioncall functionName="begin"/>
+    <functioncall functionName="const"/>
+    <functioncall functionName="emplace_back"/>
+    <functioncall functionName="end"/>
+    <functioncall functionName="find_if"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="idx"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="isKey"/>
+    <functioncall functionName="key"/>
+    <functioncall functionName="lastIdx"/>
+    <functioncall functionName="make_optional"/>
+    <functioncall functionName="nullopt"/>
+    <functioncall functionName="second"/>
+    <functioncall functionName="size"/>
+    <functioncall functionName="string_view"/>
+    <functioncall functionName="substr"/>
+    <functioncall functionName="value"/>
+  </FileInfo>
+</analyzerinfo>
