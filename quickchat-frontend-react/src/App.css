@@ -1,0 +1,146 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, ubuntu;
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+input,
+button {
+    font-family: verdana, ubuntu;
+}
+
+.container {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* min-height: 100%; */
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.full-size {
+    min-width: 100%;
+    flex-grow: 1 1 auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+.left-side {
+    left: 0;
+    min-height: 100%;
+    width: 100px;
+    
+}
+
+.chat-list {
+    /* min-width: 240px; */
+    /* max-width: 380px; */
+    overflow: auto;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-list {
+    width: 100%;
+    flex: 1 1 auto;
+    min-width: 140px;
+    overflow: auto;
+    padding-top: 100px;
+    /* padding: 0px; */
+    margin : 0px;
+}
+
+.input-area {
+    height: 50px;
+    background: red;
+}
+
+.input-chat {
+    background-color: yellow;
+}
+
+.channel-name {
+    background-color: yellow;
+}
+
+.tab {
+    flex-grow: inherit;
+    max-width: 500;
+}
+/*
+.navside-bar {
+    display: flex;
+    flex-direction: row;
+    width: 425px;
+    align-items: stretch;
+}
+
+.rce-sbar {
+    padding: 0px;
+    align-items: start;
+    align-content: start;
+    justify-content: start;
+    flex: 1 1 auto;
+    min-width: 100%;
+}
+
+.rce-sbar-item {
+    min-width: 100%;
+    flex : 1 1 auto;
+}
+
+.rce-container-clist{
+    flex : 1 1 auto;
+}
+
+.top-btn {
+    max-width: 20px;
+}
+
+.main-tab {
+    display: flex;
+    min-width: 67px;
+    background: #99c2ff;
+    background-image: linear-gradient(#0cb3ff,#0068ff);
+}
+
+.title-name {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.rce-mbox-text{
+    font-size: 16px;
+}
+
+.chat-list {
+    display: flex;
+    overflow: auto;
+}
+
+
+.message-list {
+    flex: 1;
+    min-width: 140px;
+    overflow: auto;
+}
+
+.input-area {
+    height: 50px;
+    background: red;
+} */
