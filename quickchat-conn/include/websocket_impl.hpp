@@ -208,12 +208,17 @@ private:
 
         // const auto outsending = incoming.SerializeAsString();
         const uint64_t userId = userData->userId;
+        constexpr size_t maxMessageSize = 65536;
 
         //logger::info("onmessage: {}", incoming.DebugString());
 
         switch (incoming.type_case()) {
         case msg::WebSocketIncomingMessage::TypeCase::kChat:
           if (incoming.chat().content().content().empty()) {
+            break;
+          }
+          if (incoming.chat().content().content().size() > maxMessageSize) {
+            // TODO: error message
             break;
           }
           incoming.mutable_chat()->set_user_id(userId);
