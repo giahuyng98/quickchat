@@ -38,6 +38,7 @@
       "enable.auto.commit" : "false"
     },
     "consumer" : {
+      "threads" : 1,
       "topics" : {
         "chat" : "quickchat-messages.chat",
         "seen" : "quickchat-messages.seen"

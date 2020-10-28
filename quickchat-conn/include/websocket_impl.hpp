@@ -209,10 +209,13 @@ private:
         // const auto outsending = incoming.SerializeAsString();
         const uint64_t userId = userData->userId;
 
-        logger::info("onmessage: {}", incoming.DebugString());
+        //logger::info("onmessage: {}", incoming.DebugString());
 
         switch (incoming.type_case()) {
         case msg::WebSocketIncomingMessage::TypeCase::kChat:
+          if (incoming.chat().content().content().empty()) {
+            break;
+          }
           incoming.mutable_chat()->set_user_id(userId);
           // TODO: client timestamp, server timestamp
           messageProducer.produceChatMessage(

@@ -81,6 +81,7 @@ private:
       logger::error("can't save chat message");
     }
 
+    // TODO: commit offset
     // saving or not, just commit
     consumer->commit();
   }
@@ -99,9 +100,10 @@ private:
       }
 
     } catch (std::exception &ex) {
-      logger::error("can't save chat message");
+      logger::error("can't save seen message");
     }
 
+    // TODO: commit offset
     // saving or not, just commit
     consumer->commit();
   }
@@ -122,7 +124,7 @@ private:
 
           const std::string topic = msg.get_topic();
 
-          logger::info("Kafka [{}] : {}", topic, binaryMessage);
+          //logger::info("Kafka [{}] : {}", topic, binaryMessage);
 
           if (topic == chatTopic) {
             handleChatMessage(binaryMessage);

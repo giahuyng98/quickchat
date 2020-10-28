@@ -7,6 +7,7 @@
 #include "message_publisher_impl.hpp"
 #include "message_repository_impl.hpp"
 #include "message_service_impl.hpp"
+#include <algorithm>
 
 void sigint_handler(int) {
   //  should_exit.notify_all();
@@ -14,7 +15,6 @@ void sigint_handler(int) {
 
 template <class MessageService, class Consummer> struct App {
   MessageService messageService;
-  Consummer consumer;
   std::condition_variable should_exit;
   std::thread consummerThread;
 
@@ -22,9 +22,26 @@ template <class MessageService, class Consummer> struct App {
     ConfigJson config;
     config.loadFromFile("config.json");
 
-    consumer.start(config); // non blocking
-    consummerThread = std::thread([&] { consumer.loop(); });
+    const size_t threadCount =
+        config["kafka"]["consumer"]["threads"].get<size_t>();
+
+    std::vector<std::thread> consummerThreads(threadCount);
+
+    std::transform(consummerThreads.begin(), consummerThreads.end(),
+                   consummerThreads.begin(), [&](auto &th) {
+                     return std::thread([&]() {
+                       Consummer consumer;
+                       consumer.start(config); // non blocking
+                       consumer.loop();
+                     });
+                   });
+
+    // consummerThread = std::thread([&] { consumer.loop(); });
+
     messageService.start(config); // blocking
+
+    std::for_each(consummerThreads.begin(), consummerThreads.end(),
+                  [](auto &th) { th.join(); });
 
     // TODO:  signal hanler
   }
