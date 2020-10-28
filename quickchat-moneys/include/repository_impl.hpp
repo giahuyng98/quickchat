@@ -213,14 +213,27 @@ private:
     try {
       mysqlpp::Transaction tran(conn, mysqlpp::Transaction::repeatable_read,
                                 mysqlpp::Transaction::this_transaction);
-      // subtract balance
-      if (!subtractBalance(request->user_id(), request->amount())) {
-        throw mysqlpp::BadQuery("not enought money or amount = 0");
-      }
+      // lock smaller id first
+      if (request->user_id() < request->to_user()) {
+        // subtract balance
+        if (!subtractBalance(request->user_id(), request->amount())) {
+          throw mysqlpp::BadQuery("not enought money or amount = 0");
+        }
 
-      // add balance
-      if (!addBalance(request->to_user(), request->amount())) {
-        throw mysqlpp::BadQuery("can't transfer");
+        // add balance
+        if (!addBalance(request->to_user(), request->amount())) {
+          throw mysqlpp::BadQuery("can't transfer");
+        }
+      } else {
+        // add balance
+        if (!addBalance(request->to_user(), request->amount())) {
+          throw mysqlpp::BadQuery("can't transfer");
+        }
+
+        // subtract balance
+        if (!subtractBalance(request->user_id(), request->amount())) {
+          throw mysqlpp::BadQuery("not enought money or amount = 0");
+        }
       }
 
       // update request status
