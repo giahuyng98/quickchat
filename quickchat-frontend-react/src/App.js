@@ -390,6 +390,11 @@ export default function App(props) {
                     console.log('incoming');
                     // console.log(incoming.getChat().toObject());
                     onChatMessage(Conveter.toChatMessage(incoming.getChat()));
+                    const type = incoming.getChat().getContent().getType();
+                    if (type == msg.ChatContent.ChatContentType.MONEY) {
+                      getMoneyInfo();
+                      getTransactionHistory();
+                    }
                     // props.onChatMessage();
                     break;
                 case msg.InMessage.TypeCase.SEEN:

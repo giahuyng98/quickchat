@@ -329,6 +329,53 @@ private:
   }
   auto registerUserRoute() {
     return [&](auto *res, auto *req) {
+      std::shared_ptr<bool> aborted = std::make_shared<bool>(false);
+      res->onAborted([=]() { *aborted = true; });
+
+      res->onData([&, buff = std::string(), res, aborted](std::string_view data,
+                                                          bool last) mutable {
+        if (*aborted) {
+          return;
+        }
+
+        buff.append(data.data(), data.size());
+        if (!last) {
+          return;
+        }
+
+        res->writeHeader("Content-Type", "application/json");
+        res->writeHeader("Access-Control-Allow-Origin", "*");
+
+        srv::CreateUserRequest createRequest;
+        auto convertedStatus =
+            google::protobuf::util::JsonStringToMessage(buff, &createRequest);
+
+        if (!convertedStatus.ok()) {
+          logger::error(convertedStatus.error_message().as_string());
+          res->end(R"({"error":"1","message":"invalid request"})");
+          return;
+        }
+
+        const auto [rpcStatus, user] = userService.createUser(createRequest);
+        if (!rpcStatus.ok()) {
+          res->end(fmt::format(R"({{"error":{},"message":"{}"}})",
+                               rpcStatus.error_code(),
+                               rpcStatus.error_message()));
+          return;
+        }
+
+        //auto sessionId = sessionService.store(user);
+        //if (!sessionId) {
+        //  res->end(R"({"error":"1","message":"can't store session"})");
+        //  return;
+        //}
+        msg::UserReponse userReponse;
+        userReponse.set_error(0);
+        userReponse.set_message("ok");
+        *userReponse.mutable_data() =
+            detail::toUserReponseData(user, "");
+        res->end(detail::messageToJsonString(userReponse));
+      });
 
     };
   }
