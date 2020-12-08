@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import DataSource from './DataSource'
+//import DataSource from './DataSource'
+import DataSource from './FakeDataSource'
 import SingIn from './SignIn'
 
 const Main = (props) => {

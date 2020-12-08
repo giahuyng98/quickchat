@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import DataSource from './DataSource'
+import DataSource from './FakeDataSource'
 import URL from './URL'
 
 function Copyright() {
@@ -81,7 +81,7 @@ export default function SignIn() {
             id="username"
             label="Username"
             name="username"
-            onChange={(evt) => setData({...data, username : evt.target.value})}
+            onChange={(evt) => setData({ ...data, username: evt.target.value })}
             // autoComplete="email"
             autoFocus
           />
@@ -95,7 +95,7 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
-            onChange={(evt) => setData({...data, password : evt.target.value})}
+            onChange={(evt) => setData({ ...data, password: evt.target.value })}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}

@@ -1,45 +1,122 @@
 
-import URL from './URL'
 import { v4 as uuidv4 } from 'uuid';
 
 const DataSource = {
 
   login: async (username, password) => {
-    const data = {
-      username: username,
-      password: password
-    }
-    const res = await fetch(URL.getLoginURL(),
-      {
-        method: 'POST',
-        body: JSON.stringify(data)
-      }).then(data => data.json());
-    return res;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: {
+        id: '1',
+        username: 'giahuy',
+        email: 'giahuy@email.com',
+        fullname: 'Nguyen Gia Huy',
+        sessionId: '123456',
+      }
+    })
   },
 
   getChatList: async (sessionId) => {
-    const json = await fetch(URL.getChatListURL(sessionId)).then(data => data.json());
-    return json;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: [
+        {
+          channel: {
+            id: '1',
+            name: 'Vo Minh Duc',
+            type: 'private',
+            createAt: '',
+            members: [
+              {
+                userId: '2',
+                role: 'user',
+                joinAt: '',
+              },
+            ]
+          },
+          lastMessage: {
+            channelId: '1',
+            messageId: '1',
+            userId: '1',
+            content: {
+              content: 'hi there',
+              replyTo : '1',
+              seens : [],
+              reactions: [],
+              createAt : new Date(),
+            },
+          }
+        },
+        {
+          channel: {
+            id: '2',
+            name: 'Nguyen Huu Canh',
+            type: 'private',
+            createAt: '',
+            members: [
+              {
+                userId: '3',
+                role: 'user',
+                joinAt: '',
+              },
+            ]
+          },
+          lastMessage: {
+            channelId: '2',
+            messageId: '2',
+            userId: '3',
+            content: {
+              content: 'canh canh',
+              replyTo : '1',
+              seens : [],
+              reactions: [],
+              createAt : new Date(),
+            },
+          }
+        },
+
+      ],
+    })
   },
 
   getFriendList: async (sessionId) => {
-    const json = await fetch(URL.getFriendListURL(sessionId)).then(data => data.json());
-    return json;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: {
+        friends: [],
+        sentRequests: [],
+        receivedRequests: [],
+      }
+    })
   },
 
   getMessageList: async (sessionId, channelId) => {
-    const json = await fetch(URL.getMessageListURL(sessionId, channelId)).then(data => data.json());
-    return json;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: [],
+    })
   },
 
   getUserAuthenInfo: async (sessionId) => {
-    const json = await fetch(URL.getAuthenURL(sessionId)).then(data => data.json());
-    return json;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: {
+      }
+    })
   },
 
   getUserInfo: async (userId) => {
-    const userInfo = await fetch(URL.getUserURL(userId)).then(data => data.json());
-    return userInfo.error != 0 ? null : userInfo.data;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: {
+      }
+    })
   },
 
   getSessionIdFromUrl: () => {
@@ -47,8 +124,12 @@ const DataSource = {
   },
 
   getMoneyInfo: async (sessionId) => {
-    const account = await fetch(URL.getMoneyInfoURL(sessionId)).then(data => data.json());
-    return account;
+    return ({
+      error: 0,
+      message: 'ok',
+      data: {
+      }
+    })
   },
 
   createGroup: async (sessionId, me, name, users) => {
