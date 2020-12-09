@@ -42,11 +42,12 @@ const DataSource = {
             userId: '1',
             content: {
               content: 'hi there',
-              replyTo : '1',
-              seens : [],
+              type: 'text',
+              replyTo: '1',
+              seens: [],
               reactions: [],
-              createAt : new Date(),
             },
+            createAt: new Date().toString(),
           }
         },
         {
@@ -69,11 +70,11 @@ const DataSource = {
             userId: '3',
             content: {
               content: 'canh canh',
-              replyTo : '1',
-              seens : [],
+              replyTo: '1',
+              seens: [],
               reactions: [],
-              createAt : new Date(),
             },
+            createAt: new Date().toString(),
           }
         },
 
@@ -94,10 +95,27 @@ const DataSource = {
   },
 
   getMessageList: async (sessionId, channelId) => {
+    let data = []
+    const userIds = ['1', '2', '3', '4']
+    for (let i = 0; i < 50; ++i) {
+      data.push({
+        channelId: '2',
+        messageId: '2',
+        userId: userIds[Math.ceil(Math.random(userIds.length))],
+        content: {
+          content: `message ${i}`,
+          replyTo: '1',
+          type: 'text',
+          seens: [],
+          reactions: [],
+        },
+        createAt: new Date().toString(),
+      })
+    }
     return ({
       error: 0,
       message: 'ok',
-      data: [],
+      data: data,
     })
   },
 
@@ -106,6 +124,8 @@ const DataSource = {
       error: 0,
       message: 'ok',
       data: {
+        fullname: 'Nguyen Gia Huy',
+        username: 'giahuyng98',
       }
     })
   },
@@ -115,6 +135,8 @@ const DataSource = {
       error: 0,
       message: 'ok',
       data: {
+        fullname: 'Nguyen Gia Huy',
+        username: 'giahuyng98',
       }
     })
   },
