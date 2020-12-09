@@ -364,19 +364,17 @@ private:
           return;
         }
 
-        //auto sessionId = sessionService.store(user);
-        //if (!sessionId) {
+        // auto sessionId = sessionService.store(user);
+        // if (!sessionId) {
         //  res->end(R"({"error":"1","message":"can't store session"})");
         //  return;
         //}
         msg::UserReponse userReponse;
         userReponse.set_error(0);
         userReponse.set_message("ok");
-        *userReponse.mutable_data() =
-            detail::toUserReponseData(user, "");
+        *userReponse.mutable_data() = detail::toUserReponseData(user, "");
         res->end(detail::messageToJsonString(userReponse));
       });
-
     };
   }
   auto loginUserRoute() {

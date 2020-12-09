@@ -72,6 +72,6 @@ message FriendListReponse {
   message Data {
     repeated msg.Friend friends = 1;
     repeated msg.Friend sent_requests = 2;
-    repeated msg.Friend received_request = 3;
+    repeated msg.Friend received_requests = 3;
   }
 }

@@ -130,7 +130,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_friend_5fservice_2eproto::offs
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::srv::ListUserFriendsReponse, friends_),
   PROTOBUF_FIELD_OFFSET(::srv::ListUserFriendsReponse, sent_requests_),
-  PROTOBUF_FIELD_OFFSET(::srv::ListUserFriendsReponse, received_request_),
+  PROTOBUF_FIELD_OFFSET(::srv::ListUserFriendsReponse, received_requests_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::srv::BaseRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -179,25 +179,25 @@ const char descriptor_table_protodef_friend_5fservice_2eproto[] PROTOBUF_SECTION
   "o\032\037google/protobuf/timestamp.proto\032 goog"
   "le/protobuf/field_mask.proto\032\033google/pro"
   "tobuf/empty.proto\")\n\026ListUserFriendsRequ"
-  "est\022\017\n\007user_id\030\001 \001(\004\"\201\001\n\026ListUserFriends"
+  "est\022\017\n\007user_id\030\001 \001(\004\"\202\001\n\026ListUserFriends"
   "Reponse\022\034\n\007friends\030\001 \003(\0132\013.msg.Friend\022\"\n"
-  "\rsent_requests\030\002 \003(\0132\013.msg.Friend\022%\n\020rec"
-  "eived_request\030\003 \003(\0132\013.msg.Friend\"V\n\013Base"
-  "Request\022\014\n\004from\030\001 \001(\004\022\n\n\002to\030\002 \001(\004\022-\n\tcre"
-  "ate_at\030\003 \001(\0132\032.google.protobuf.Timestamp"
-  "\"g\n\013BaseReponse\022\014\n\004from\030\001 \001(\004\022\n\n\002to\030\002 \001("
-  "\004\022-\n\tcreate_at\030\003 \001(\0132\032.google.protobuf.T"
-  "imestamp\022\017\n\007message\030\004 \001(\t\"t\n\031ChangeFrien"
-  "dStatusRequest\022\014\n\004from\030\001 \001(\004\022\n\n\002to\030\002 \001(\004"
-  "\022\016\n\006status\030\003 \001(\t\022-\n\tcreate_at\030\004 \001(\0132\032.go"
-  "ogle.protobuf.Timestamp2\224\002\n\rFriendServic"
-  "e\022M\n\017ListUserFriends\022\033.srv.ListUserFrien"
-  "dsRequest\032\033.srv.ListUserFriendsReponse\"\000"
-  "\0224\n\014CreateFriend\022\020.srv.BaseRequest\032\020.srv"
-  ".BaseReponse\"\000\0224\n\014DeleteFriend\022\020.srv.Bas"
-  "eRequest\032\020.srv.BaseReponse\"\000\022H\n\022ChangeFr"
-  "iendStatus\022\036.srv.ChangeFriendStatusReque"
-  "st\032\020.srv.BaseReponse\"\000b\006proto3"
+  "\rsent_requests\030\002 \003(\0132\013.msg.Friend\022&\n\021rec"
+  "eived_requests\030\003 \003(\0132\013.msg.Friend\"V\n\013Bas"
+  "eRequest\022\014\n\004from\030\001 \001(\004\022\n\n\002to\030\002 \001(\004\022-\n\tcr"
+  "eate_at\030\003 \001(\0132\032.google.protobuf.Timestam"
+  "p\"g\n\013BaseReponse\022\014\n\004from\030\001 \001(\004\022\n\n\002to\030\002 \001"
+  "(\004\022-\n\tcreate_at\030\003 \001(\0132\032.google.protobuf."
+  "Timestamp\022\017\n\007message\030\004 \001(\t\"t\n\031ChangeFrie"
+  "ndStatusRequest\022\014\n\004from\030\001 \001(\004\022\n\n\002to\030\002 \001("
+  "\004\022\016\n\006status\030\003 \001(\t\022-\n\tcreate_at\030\004 \001(\0132\032.g"
+  "oogle.protobuf.Timestamp2\224\002\n\rFriendServi"
+  "ce\022M\n\017ListUserFriends\022\033.srv.ListUserFrie"
+  "ndsRequest\032\033.srv.ListUserFriendsReponse\""
+  "\000\0224\n\014CreateFriend\022\020.srv.BaseRequest\032\020.sr"
+  "v.BaseReponse\"\000\0224\n\014DeleteFriend\022\020.srv.Ba"
+  "seRequest\032\020.srv.BaseReponse\"\000\022H\n\022ChangeF"
+  "riendStatus\022\036.srv.ChangeFriendStatusRequ"
+  "est\032\020.srv.BaseReponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_friend_5fservice_2eproto_deps[4] = {
   &::descriptor_table_friend_2eproto,
@@ -214,7 +214,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_fri
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_friend_5fservice_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_friend_5fservice_2eproto = {
-  false, false, descriptor_table_protodef_friend_5fservice_2eproto, "friend_service.proto", 910,
+  false, false, descriptor_table_protodef_friend_5fservice_2eproto, "friend_service.proto", 911,
   &descriptor_table_friend_5fservice_2eproto_once, descriptor_table_friend_5fservice_2eproto_sccs, descriptor_table_friend_5fservice_2eproto_deps, 5, 4,
   schemas, file_default_instances, TableStruct_friend_5fservice_2eproto::offsets,
   file_level_metadata_friend_5fservice_2eproto, 5, file_level_enum_descriptors_friend_5fservice_2eproto, file_level_service_descriptors_friend_5fservice_2eproto,
@@ -435,14 +435,14 @@ void ListUserFriendsReponse::clear_friends() {
 void ListUserFriendsReponse::clear_sent_requests() {
   sent_requests_.Clear();
 }
-void ListUserFriendsReponse::clear_received_request() {
-  received_request_.Clear();
+void ListUserFriendsReponse::clear_received_requests() {
+  received_requests_.Clear();
 }
 ListUserFriendsReponse::ListUserFriendsReponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   friends_(arena),
   sent_requests_(arena),
-  received_request_(arena) {
+  received_requests_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:srv.ListUserFriendsReponse)
@@ -451,7 +451,7 @@ ListUserFriendsReponse::ListUserFriendsReponse(const ListUserFriendsReponse& fro
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       friends_(from.friends_),
       sent_requests_(from.sent_requests_),
-      received_request_(from.received_request_) {
+      received_requests_(from.received_requests_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:srv.ListUserFriendsReponse)
 }
@@ -493,7 +493,7 @@ void ListUserFriendsReponse::Clear() {
 
   friends_.Clear();
   sent_requests_.Clear();
-  received_request_.Clear();
+  received_requests_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -529,13 +529,13 @@ const char* ListUserFriendsReponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .msg.Friend received_request = 3;
+      // repeated .msg.Friend received_requests = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_received_request(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_received_requests(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
@@ -585,12 +585,12 @@ failure:
       InternalWriteMessage(2, this->_internal_sent_requests(i), target, stream);
   }
 
-  // repeated .msg.Friend received_request = 3;
+  // repeated .msg.Friend received_requests = 3;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_received_request_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_received_requests_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_received_request(i), target, stream);
+      InternalWriteMessage(3, this->_internal_received_requests(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -623,9 +623,9 @@ size_t ListUserFriendsReponse::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .msg.Friend received_request = 3;
-  total_size += 1UL * this->_internal_received_request_size();
-  for (const auto& msg : this->received_request_) {
+  // repeated .msg.Friend received_requests = 3;
+  total_size += 1UL * this->_internal_received_requests_size();
+  for (const auto& msg : this->received_requests_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -663,7 +663,7 @@ void ListUserFriendsReponse::MergeFrom(const ListUserFriendsReponse& from) {
 
   friends_.MergeFrom(from.friends_);
   sent_requests_.MergeFrom(from.sent_requests_);
-  received_request_.MergeFrom(from.received_request_);
+  received_requests_.MergeFrom(from.received_requests_);
 }
 
 void ListUserFriendsReponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -689,7 +689,7 @@ void ListUserFriendsReponse::InternalSwap(ListUserFriendsReponse* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   friends_.InternalSwap(&other->friends_);
   sent_requests_.InternalSwap(&other->sent_requests_);
-  received_request_.InternalSwap(&other->received_request_);
+  received_requests_.InternalSwap(&other->received_requests_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListUserFriendsReponse::GetMetadata() const {

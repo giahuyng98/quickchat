@@ -123,7 +123,7 @@ private:
     srv::ListUserFriendsReponse res;
     *res.mutable_friends() = getListFriends(req->user_id());
     *res.mutable_sent_requests() = getSentList(req->user_id());
-    *res.mutable_received_request() = getReceiveList(req->user_id());
+    *res.mutable_received_requests() = getReceiveList(req->user_id());
     return res;
   }
 

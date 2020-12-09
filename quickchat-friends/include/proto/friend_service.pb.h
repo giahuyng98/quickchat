@@ -338,7 +338,7 @@ class ListUserFriendsReponse PROTOBUF_FINAL :
   enum : int {
     kFriendsFieldNumber = 1,
     kSentRequestsFieldNumber = 2,
-    kReceivedRequestFieldNumber = 3,
+    kReceivedRequestsFieldNumber = 3,
   };
   // repeated .msg.Friend friends = 1;
   int friends_size() const;
@@ -376,23 +376,23 @@ class ListUserFriendsReponse PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend >&
       sent_requests() const;
 
-  // repeated .msg.Friend received_request = 3;
-  int received_request_size() const;
+  // repeated .msg.Friend received_requests = 3;
+  int received_requests_size() const;
   private:
-  int _internal_received_request_size() const;
+  int _internal_received_requests_size() const;
   public:
-  void clear_received_request();
-  ::msg::Friend* mutable_received_request(int index);
+  void clear_received_requests();
+  ::msg::Friend* mutable_received_requests(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend >*
-      mutable_received_request();
+      mutable_received_requests();
   private:
-  const ::msg::Friend& _internal_received_request(int index) const;
-  ::msg::Friend* _internal_add_received_request();
+  const ::msg::Friend& _internal_received_requests(int index) const;
+  ::msg::Friend* _internal_add_received_requests();
   public:
-  const ::msg::Friend& received_request(int index) const;
-  ::msg::Friend* add_received_request();
+  const ::msg::Friend& received_requests(int index) const;
+  ::msg::Friend* add_received_requests();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend >&
-      received_request() const;
+      received_requests() const;
 
   // @@protoc_insertion_point(class_scope:srv.ListUserFriendsReponse)
  private:
@@ -403,7 +403,7 @@ class ListUserFriendsReponse PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend > friends_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend > sent_requests_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend > received_request_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend > received_requests_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_friend_5fservice_2eproto;
 };
@@ -1072,40 +1072,40 @@ ListUserFriendsReponse::sent_requests() const {
   return sent_requests_;
 }
 
-// repeated .msg.Friend received_request = 3;
-inline int ListUserFriendsReponse::_internal_received_request_size() const {
-  return received_request_.size();
+// repeated .msg.Friend received_requests = 3;
+inline int ListUserFriendsReponse::_internal_received_requests_size() const {
+  return received_requests_.size();
 }
-inline int ListUserFriendsReponse::received_request_size() const {
-  return _internal_received_request_size();
+inline int ListUserFriendsReponse::received_requests_size() const {
+  return _internal_received_requests_size();
 }
-inline ::msg::Friend* ListUserFriendsReponse::mutable_received_request(int index) {
-  // @@protoc_insertion_point(field_mutable:srv.ListUserFriendsReponse.received_request)
-  return received_request_.Mutable(index);
+inline ::msg::Friend* ListUserFriendsReponse::mutable_received_requests(int index) {
+  // @@protoc_insertion_point(field_mutable:srv.ListUserFriendsReponse.received_requests)
+  return received_requests_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend >*
-ListUserFriendsReponse::mutable_received_request() {
-  // @@protoc_insertion_point(field_mutable_list:srv.ListUserFriendsReponse.received_request)
-  return &received_request_;
+ListUserFriendsReponse::mutable_received_requests() {
+  // @@protoc_insertion_point(field_mutable_list:srv.ListUserFriendsReponse.received_requests)
+  return &received_requests_;
 }
-inline const ::msg::Friend& ListUserFriendsReponse::_internal_received_request(int index) const {
-  return received_request_.Get(index);
+inline const ::msg::Friend& ListUserFriendsReponse::_internal_received_requests(int index) const {
+  return received_requests_.Get(index);
 }
-inline const ::msg::Friend& ListUserFriendsReponse::received_request(int index) const {
-  // @@protoc_insertion_point(field_get:srv.ListUserFriendsReponse.received_request)
-  return _internal_received_request(index);
+inline const ::msg::Friend& ListUserFriendsReponse::received_requests(int index) const {
+  // @@protoc_insertion_point(field_get:srv.ListUserFriendsReponse.received_requests)
+  return _internal_received_requests(index);
 }
-inline ::msg::Friend* ListUserFriendsReponse::_internal_add_received_request() {
-  return received_request_.Add();
+inline ::msg::Friend* ListUserFriendsReponse::_internal_add_received_requests() {
+  return received_requests_.Add();
 }
-inline ::msg::Friend* ListUserFriendsReponse::add_received_request() {
-  // @@protoc_insertion_point(field_add:srv.ListUserFriendsReponse.received_request)
-  return _internal_add_received_request();
+inline ::msg::Friend* ListUserFriendsReponse::add_received_requests() {
+  // @@protoc_insertion_point(field_add:srv.ListUserFriendsReponse.received_requests)
+  return _internal_add_received_requests();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::msg::Friend >&
-ListUserFriendsReponse::received_request() const {
-  // @@protoc_insertion_point(field_list:srv.ListUserFriendsReponse.received_request)
-  return received_request_;
+ListUserFriendsReponse::received_requests() const {
+  // @@protoc_insertion_point(field_list:srv.ListUserFriendsReponse.received_requests)
+  return received_requests_;
 }
 
 // -------------------------------------------------------------------
