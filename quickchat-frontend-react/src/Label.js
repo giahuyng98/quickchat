@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Badge from '@material-ui/core/Badge';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   formControl: {
-    display : 'none',
+    display: 'none',
     margin: theme.spacing(1),
     minWidth: 120,
   },
@@ -77,7 +77,7 @@ export default function BadgeAvatars(props) {
   );
 }
 const statusStyles = makeStyles(theme => ({
-  root : {
+  root: {
     display: 'flex',
     '& > *': {
       margin: theme.spacing(1),
@@ -202,25 +202,25 @@ export function UserControl(props) {
               <Avatar alt={props.alt} src={props.src} />
             </StyledBadge>
           </IconButton>
-    {open && 
-    <FormControl className={classes.formControl}>
-        <InputLabel id="lb-status">Status</InputLabel>
-        <Select
-          labelId="lb-status"
-          id="status"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={status}
-          onChange={handleChange}
-        >
-          <MenuItem value={'online'}>Online</MenuItem>
-          <MenuItem value={'offline'}>Offline</MenuItem>
-          <MenuItem value={'busy'}>Busy</MenuItem>
-          <MenuItem value={'away'}>Away</MenuItem>
-        </Select>
-      </FormControl>
-    }
+          {open &&
+            <FormControl className={classes.formControl}>
+              <InputLabel id="lb-status">Status</InputLabel>
+              <Select
+                labelId="lb-status"
+                id="status"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={status}
+                onChange={handleChange}
+              >
+                <MenuItem value={'online'}>Online</MenuItem>
+                <MenuItem value={'offline'}>Offline</MenuItem>
+                <MenuItem value={'busy'}>Busy</MenuItem>
+                <MenuItem value={'away'}>Away</MenuItem>
+              </Select>
+            </FormControl>
+          }
         </div>
       </ListItemAvatar>
       <ListItemText primary={`${props.fullname} (${props.username})`} />

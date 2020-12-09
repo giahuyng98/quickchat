@@ -15,6 +15,10 @@ import {
 } from 'react-chat-elements';
 
 import moment from 'moment'
+import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 import FaSearch from 'react-icons/lib/fa/search';
 import FaComments from 'react-icons/lib/fa/comments';
@@ -75,6 +79,10 @@ import Grid from '@material-ui/core/Grid';
 import DoneIcon from '@material-ui/icons/Done';
 import ErrorIcon from '@material-ui/icons/Error';
 import { green } from '@material-ui/core/colors';
+import Carousel from 'react-material-ui-carousel'
+import UploadButtons from './UploadButtons'
+import IconButton from '@material-ui/core/IconButton';
+import SendIcon from '@material-ui/icons/Send';
 //import DataSource from './DataSource'
 import DataSource from './FakeDataSource'
 import WebSocketUtil from './WebSocket'
@@ -102,8 +110,8 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={2}>
-          <Typography>{children}</Typography>
+        <Box p={0}>
+          {children}
         </Box>
       )}
     </div>
@@ -131,7 +139,8 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
   },
   chatListPanel: {
-
+    width: '100%',
+    padding: 0,
   },
   controlAppBar: {
     zIndex: theme.zIndex.chatListPanel + 1,
@@ -172,6 +181,15 @@ const useStyles = makeStyles((theme) => ({
   connectPanel: {
 
   },
+  input: {
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+  },
+  inputText: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+  },
   messageList: {
     width: '100%',
     flex: '1 1 auto',
@@ -188,6 +206,18 @@ const useStyles = makeStyles((theme) => ({
     bottom: theme.spacing(7),
     right: theme.spacing(2),
   },
+  pad: {
+    height: 56,
+    [`${theme.breakpoints.up("xs")} and (orientation: landscape)`]: {
+      height: 48
+    },
+    [theme.breakpoints.up("sm")]: {
+      height: 64
+    }
+  },
+  centerAppbar: {
+    flexGrow: 1,
+  },
 }));
 
 function Alert(props) {
@@ -197,14 +227,20 @@ function Alert(props) {
 const Conveter = {
   toChatListView: (chatList) => {
     if (!chatList) return [];
+    console.log(chatList)
     return chatList.map(chatItem => ({
       avatar: chatItem.channel.type === 'group' ? 'group.svg' : 'user.ico',
       channel: chatItem.channel,
       alt: chatItem.channel.name,
       title: chatItem.channel.name,
+      subtitle: 'sub title',
+      statusColor: '#44b700',
+      statusColorType: 'encircle',
       subtitle: chatItem.lastMessage.content ? chatItem.lastMessage.content.content : '',
-      date: chatItem.lastMessage.createAt ? Date.parse(chatItem.lastMessage.createAt) : null,
-      unread: 0,
+      date: chatItem.lastMessage.createAt ?
+        Date.parse(chatItem.lastMessage.createAt) :
+        null,
+      unread: 1,
     }));
   },
   toMessageView: (user, message) => {
@@ -231,7 +267,7 @@ const Conveter = {
       status: 'read',
       text: messageText,
       date: Date.parse(message.createAt),
-      avatar: 'user.ico'
+      // avatar: 'user.ico'
     })
   }
   ,
@@ -277,6 +313,7 @@ export default function App(props) {
   const [moneyInfo, setMoneyInfo] = useState({});
   const [group, setGroup] = useState({});
   const [transactionHistory, setTransactionHistory] = useState([]);
+  const [slide, setSlide] = useState([{ name: 'slide 1' }, { name: 'slide 2' }])
   //const [chatInput, setChatInput] = useState();
   // const [ws, setWs] = useState(null);
   const data = {}; //useState({});
@@ -645,8 +682,8 @@ export default function App(props) {
             <UserControl alt='username' src='user.ico' {...userInfo} />
           </Paper>
 
-          <List>
-            <ListItem >
+          <List disablePadding={true} >
+            <ListItem disableGutters={true}>
               <Button
                 variant="contained"
                 color="primary"
@@ -679,8 +716,8 @@ export default function App(props) {
             </ListItem>
 
             <Divider />
-            <ListSubheader>Chat List</ListSubheader>
-            <ListItem >
+            <ListSubheader>Chat list</ListSubheader>
+            <ListItem disableGutters={true}>
               <ChatList
                 className="full-size"
                 dataSource={chatList}
@@ -880,11 +917,8 @@ export default function App(props) {
                   <TransferWithinAStationIcon />
                 </Fab>
               }
-
             </Toolbar>
           </AppBar>
-
-
           <div className="right-panel">
             <MessageList
               className={classes.messageList}
@@ -893,39 +927,26 @@ export default function App(props) {
               downButtonBadge={10}
               dataSource={messageList}
             />
-            <Input
-              placeholder="Enter message."
-              defaultValue=""
-              multiline={true}
-              autoHeight={false}
-              minHeight={100}
-              buttonsFloat='right'
-              onKeyPress={(e) => {
-                if (e.shiftKey && e.charCode === 13) {
-                  return true;
-                }
-                if (e.charCode === 13) {
-                  sendChatMessage(e.target.value);
-                  e.target.value = '';
-                  e.preventDefault();
-                  return false;
-                }
-              }}
-              rightButtons={
-                <React.Fragment>
-                  <CButton>
-                    text='Image'
-                  </CButton>
-                  <CButton
-                    text='Send'
-                    onClick={() => {
-                      console.log('send')
-                    }}
-                  />
-                </React.Fragment>
-
-              } />
+            <Paper component="form" className={classes.input}>
+              <OutlinedInput fullWidth classeName={classes.inputText}
+                // id="outlined-adornment-amount"
+                multiline={true}
+                rowsMax={3}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    sendChatMessage(e.target.value);
+                    e.target.value = '';
+                    e.preventDefault()
+                  }
+                }}
+              />
+              <UploadButtons />
+              <IconButton color="primary">
+                <SendIcon fontSize="large" />
+              </IconButton>
+            </Paper>
           </div>
+
           <Drawer
             className={classes.rightPannel}
             variant="permanent"
@@ -935,7 +956,13 @@ export default function App(props) {
             }}
           >
           </Drawer>
-
+        </React.Fragment>
+      }
+      {!currentChannel &&
+        <React.Fragment>
+          <Carousel className="right-panel">
+            {slide.map((item, i) => <SlideItem {...item} />)}
+          </Carousel>
         </React.Fragment>
       }
       <Dialog open={transaction.open} onClose={handleCloseTransaction} aria-labelledby="form-dialog-title">
@@ -1042,6 +1069,16 @@ const TransactionHistory = (props) => {
         ))}
       </List>
     </React.Fragment>
+  )
+}
+
+function SlideItem(props) {
+  return (
+    <Paper>
+      <Typography>
+        {JSON.stringify(props)}
+      </Typography>
+    </Paper>
   )
 }
 
