@@ -6,6 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper';
 import { Divider, IconButton } from '@material-ui/core';
@@ -14,6 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Hidden from '@material-ui/core/Hidden';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -54,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     display: 'none',
     margin: theme.spacing(1),
-    minWidth: 120,
+    // minWidth: 120,
   },
 }));
 
@@ -203,7 +205,7 @@ export function UserControl(props) {
             </StyledBadge>
           </IconButton>
           {open &&
-            <FormControl className={classes.formControl}>
+            <FormControl component='span' className={classes.formControl}>
               <InputLabel id="lb-status">Status</InputLabel>
               <Select
                 labelId="lb-status"
@@ -214,7 +216,14 @@ export function UserControl(props) {
                 value={status}
                 onChange={handleChange}
               >
-                <MenuItem value={'online'}>Online</MenuItem>
+                <MenuItem value={'online'}>
+                  <ListItemIcon>
+                    <FiberManualRecordIcon color='primary' />
+                  </ListItemIcon>
+                  <ListItemText>
+                    Online
+                  </ListItemText>
+                </MenuItem>
                 <MenuItem value={'offline'}>Offline</MenuItem>
                 <MenuItem value={'busy'}>Busy</MenuItem>
                 <MenuItem value={'away'}>Away</MenuItem>
