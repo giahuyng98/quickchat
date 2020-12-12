@@ -89,6 +89,9 @@ import WebSocketUtil from './WebSocket'
 
 import 'react-chat-elements/dist/main.css';
 import './App.css';
+import MyChatList from './ChatList'
+import UserSearchDialog from './UserSearchDialog'
+import SlideItem from './SlideItem'
 // import classes from '*.module.css';
 
 const msg = require('./payload_pb');
@@ -131,7 +134,6 @@ const rightPannelWidth = window.innerWidth / 5;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    overflow: 'auto',
     position: 'absolute',
     top: 0,
     bottom: 0,
@@ -139,11 +141,21 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
   },
   chatListPanel: {
-    width: '100%',
-    padding: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    // width: '100%',
+    // padding: 0,
+    overflow: 'hidden',
+  },
+  chatList: {
+    // minHeight: '100%',
+    height: '700px',
+    overflow: 'auto',
+    // minWidth: '100%',
   },
   controlAppBar: {
-    zIndex: theme.zIndex.chatListPanel + 1,
+    // overflow: 'hidden',
+    // zIndex: theme.zIndex.chatListPanel + 1,
   },
   appBar: {
     width: `calc(100% - ${leftPannelWidth}px) `,
@@ -156,8 +168,13 @@ const useStyles = makeStyles((theme) => ({
     width: `calc(100% - ${leftPannelWidth}px)`,
     marginLeft: leftPannelWidth,
   },
+  slide: {
+    position: 'center',
+  },
   leftPannel: {
     width: leftPannelWidth,
+    height: '100vh',
+    // overflow: 'hidden',
     flexShrink: 0,
   },
   rightPannel: {
@@ -225,9 +242,8 @@ function Alert(props) {
 }
 
 const Conveter = {
-  toChatListView: (chatList) => {
+  toChatListView: (chatList, userId) => {
     if (!chatList) return [];
-    console.log(chatList)
     return chatList.map(chatItem => ({
       avatar: chatItem.channel.type === 'group' ? 'group.svg' : 'user.ico',
       channel: chatItem.channel,
@@ -292,6 +308,9 @@ const Conveter = {
 let ws;
 
 export default function App(props) {
+
+  // return (
+  // )
 
   const [tabs, setTabs] = useState(0);
   const classes = useStyles();
@@ -658,9 +677,9 @@ export default function App(props) {
         className={classes.leftPannel}
         variant="permanent"
         anchor="left"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
+      // classes={{
+      //   paper: classes.drawerPaper,
+      // }}
       >
         <AppBar position="static" color="default" className={classes.controlAppBar}>
           <Tabs
@@ -682,49 +701,28 @@ export default function App(props) {
             <UserControl alt='username' src='user.ico' {...userInfo} />
           </Paper>
 
-          <List disablePadding={true} >
-            <ListItem disableGutters={true}>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                startIcon={<AddIcon />}
-                onClick={handleClickOpenNewChat}
-              >New Chat</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<AddIcon />}
+            onClick={handleClickOpenNewChat}
+          >New Chat</Button>
 
-              <Dialog open={openNewChat} onClose={handleCloseNewChat} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">New Chat</DialogTitle>
-                <DialogContent>
-                  <TextField
-                    onChange={onChangeNewChatUserId}
-                    autoFocus
-                    margin="dense"
-                    id="userId"
-                    label="User ID:"
-                    fullWidth
-                  />
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleCreateNewChat} color="primary">
-                    Chat
-                                    </Button>
-                  <Button onClick={handleCloseNewChat} color="secondary">
-                    Cancel
-                                    </Button>
-                </DialogActions>
-              </Dialog>
-            </ListItem>
+          <UserSearchDialog
+            open={openNewChat}
+            title="New chat"
+            onClose={handleCloseNewChat}
+            onClick={handleCreateNewChat}
+            onClose={handleCloseNewChat}
+          />
+          <Divider />
+          <ChatList
+            className={classes.chatList}
+            dataSource={chatList}
+            onClick={onChatListClick}
+          />
 
-            <Divider />
-            <ListSubheader>Chat list</ListSubheader>
-            <ListItem disableGutters={true}>
-              <ChatList
-                className="full-size"
-                dataSource={chatList}
-                onClick={onChatListClick}
-              />
-            </ListItem>
-          </List>
         </TabPanel>
         <TabPanel value={tabs} index={1} className={classes.connectPanel}>
           <List>
@@ -960,7 +958,7 @@ export default function App(props) {
       }
       {!currentChannel &&
         <React.Fragment>
-          <Carousel className="right-panel">
+          <Carousel className={classes.slide}>
             {slide.map((item, i) => <SlideItem {...item} />)}
           </Carousel>
         </React.Fragment>
@@ -1072,15 +1070,6 @@ const TransactionHistory = (props) => {
   )
 }
 
-function SlideItem(props) {
-  return (
-    <Paper>
-      <Typography>
-        {JSON.stringify(props)}
-      </Typography>
-    </Paper>
-  )
-}
 
 const formatTime = (str) => {
   return str;

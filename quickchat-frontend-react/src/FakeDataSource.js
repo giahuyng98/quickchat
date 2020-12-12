@@ -1,6 +1,16 @@
 
 import { v4 as uuidv4 } from 'uuid';
-
+let users = [
+  { username: 'user1' },
+  { username: 'user2' },
+  { username: 'user3' },
+  { username: 'user4' },
+]
+for (let c = 97; c < 97 + 26; ++c) {
+  users.push({
+    username: String.fromCharCode(c)
+  })
+}
 const DataSource = {
 
   login: async (username, password) => {
@@ -18,67 +28,41 @@ const DataSource = {
   },
 
   getChatList: async (sessionId) => {
+    let data = []
+    for (let i = 0; i < 30; ++i) {
+      data.push({
+        channel: {
+          id: `${i}`,
+          name: `Name ${i}`,
+          type: 'private',
+          createAt: '',
+          members: [
+            {
+              userId: `${i}`,
+              role: 'user',
+              joinAt: new Date(),
+            },
+          ]
+        },
+        lastMessage: {
+          channelId: `${i}`,
+          messageId: `${i}`,
+          userId: `${i}`,
+          content: {
+            content: 'hi there',
+            type: 'text',
+            replyTo: '1',
+            seens: [],
+            reactions: [],
+          },
+          createAt: new Date().toString(),
+        }
+      })
+    }
     return ({
       error: 0,
       message: 'ok',
-      data: [
-        {
-          channel: {
-            id: '1',
-            name: 'Vo Minh Duc',
-            type: 'private',
-            createAt: '',
-            members: [
-              {
-                userId: '2',
-                role: 'user',
-                joinAt: '',
-              },
-            ]
-          },
-          lastMessage: {
-            channelId: '1',
-            messageId: '1',
-            userId: '1',
-            content: {
-              content: 'hi there',
-              type: 'text',
-              replyTo: '1',
-              seens: [],
-              reactions: [],
-            },
-            createAt: new Date().toString(),
-          }
-        },
-        {
-          channel: {
-            id: '2',
-            name: 'Nguyen Huu Canh',
-            type: 'private',
-            createAt: '',
-            members: [
-              {
-                userId: '3',
-                role: 'user',
-                joinAt: '',
-              },
-            ]
-          },
-          lastMessage: {
-            channelId: '2',
-            messageId: '2',
-            userId: '3',
-            content: {
-              content: 'canh canh',
-              replyTo: '1',
-              seens: [],
-              reactions: [],
-            },
-            createAt: new Date().toString(),
-          }
-        },
-
-      ],
+      data: data,
     })
   },
 
@@ -87,9 +71,19 @@ const DataSource = {
       error: 0,
       message: 'ok',
       data: {
-        friends: [],
-        sentRequests: [],
-        receivedRequests: [],
+        friends: [
+          { username: 'friend 1', fullname: 'User friend 1' },
+          { username: 'friend 2', fullname: 'User friend 2' },
+          { username: 'friend 3', fullname: 'User friend 3' },
+        ],
+        sentRequests: [
+
+          { username: 'friend 2', fullname: 'User friend 2' },
+        ],
+        receivedRequests: [
+
+          { username: 'friend 3', fullname: 'User friend 3' },
+        ],
       }
     })
   },
@@ -255,6 +249,10 @@ const DataSource = {
       fetch(URL.getTransactionHistory(sessionId, limit, offset))
         .then(data => data.json());
     return res;
+  },
+
+  findUser: async (pattern) => {
+    return users.filter(u => u.username.startsWith(pattern)).slice(0, 10)
   },
 
 }

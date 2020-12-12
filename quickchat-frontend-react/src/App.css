@@ -46,9 +46,11 @@ body {
 }
 
 .chat-list {
-    /* min-width: 240px; */
-    /* max-width: 380px; */
     overflow: auto;
+    min-width: 100%;
+    flex-grow: 1 1 auto;
+    margin: 0px;
+    padding: 0px;
 }
 
 .right-panel {
