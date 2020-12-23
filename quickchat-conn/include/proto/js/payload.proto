@@ -4,7 +4,7 @@ import "internal_message.proto";
 
 package msg;
 
-message InMessage {
+message OutMessage {
   oneof type {
     msg.Chat chat = 1;
     msg.Seen seen = 2;
@@ -15,7 +15,7 @@ message InMessage {
 }
 
 
-message OutMessage {
+message InMessage {
   oneof type {
     msg.Chat chat = 1;
     msg.Seen seen = 2;

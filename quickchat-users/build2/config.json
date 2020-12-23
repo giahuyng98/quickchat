@@ -1,0 +1,27 @@
+{
+  "appName": "quickchat-users",
+  "port": 3009,
+
+  "rpc" : {
+    "uri" : "127.0.0.1:4103",
+    "apikey" : "user-service-key"
+  },
+
+  "session" : {
+    "expired" : 2592000
+  },
+
+  "mysql" : {
+    "db": "cchat-users",
+    "server": "127.0.0.1",
+    "user": "giahuy",
+    "password": "123"
+  },
+  "redis" : {
+    "uri" : "tcp://127.0.0.1:6379"
+  },
+  "snowflake" : {
+    "workerid" : 1,
+    "datacenterid" : 1
+  }
+}

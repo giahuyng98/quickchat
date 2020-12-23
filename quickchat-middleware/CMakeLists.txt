@@ -18,6 +18,7 @@ find_package(Threads)
 find_package(Doxygen)
 find_package(uWebSockets REQUIRED)
 find_package(CppKafka REQUIRED)
+find_package(cpp-jwt REQUIRED)
 
 find_path(REDIS_PLUS_PLUS_HEADER sw)
 find_library(REDIS_PLUS_PLUS_LIB redis++)
@@ -128,4 +129,5 @@ target_link_libraries(${PROJECT_NAME}
         spdlog::spdlog
         fmt::fmt
         Threads::Threads
+        cpp-jwt::cpp-jwt
         )

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "account.pb.h"
 #include "body_parser.hpp"
 #include "channel.pb.h"
 #include "channel_service.pb.h"
@@ -26,6 +27,7 @@
 #include <google/protobuf/timestamp.pb.h>
 #include <google/protobuf/util/json_util.h>
 #include <google/protobuf/util/time_util.h>
+#include <jwt/jwt.hpp>
 #include <memory>
 #include <optional>
 #include <spdlog/fmt/bundled/core.h>
@@ -99,6 +101,10 @@ private:
   MessageProducer producer;
   FriendService friendService;
 
+private:
+  std::string baokimIss;
+  std::string baokimSecret;
+
 public:
   template <class Config> void start(const Config &config) {
 
@@ -109,6 +115,9 @@ public:
     userService.start(config);
     moneyService.start(config);
     friendService.start(config);
+
+    baokimIss = config["baokim"]["iss"].template get<std::string>();
+    baokimSecret = config["baokim"]["secret"].template get<std::string>();
 
     // TODO: websocket behavior + res->cork, tryEnd
 
@@ -129,6 +138,8 @@ public:
     app.post(API_VERSION "/money/withdraw", withDrawMoneyRoute());
     app.post(API_VERSION "/money/transfer", transferMoneyRoute());
     app.get(API_VERSION "/money/history", historyMoneyRoute());
+    app.post(API_VERSION "/money/transfer-baokim", transferMoneyBaokimRoute());
+    app.get(API_VERSION "/money/baokim/token", getBaokimTokenRoute());
 
     app.get(API_VERSION "/friends", getUserFriendsRoute());
     app.post(API_VERSION "/friends", createFriendRoute());
@@ -805,6 +816,186 @@ private:
         }
 
         response.set_message("account created");
+        *response.mutable_data() = std::move(account);
+        res->end(detail::messageToJsonString(response));
+      });
+    };
+  }
+  auto getBaokimTokenRoute() {
+    return [&](auto *res, auto *req) {
+      BodyParser parser(req->getQuery());
+      const auto sessionId = parser["sessionId"];
+
+      res->writeHeader("Content-Type", "application/json");
+      res->writeHeader("Access-Control-Allow-Origin", "*");
+
+      if (!sessionId) {
+        res->writeStatus("400");
+        res->end(R"({"error":1,"message":"Expect sessionId"})");
+        return;
+      }
+
+      const auto auth = sessionService.authen(*sessionId);
+      if (!auth) {
+        res->writeStatus("401");
+        res->end(R"({"error":1,"message":"Authentication fail"})");
+        return;
+      }
+
+      using namespace jwt::params;
+      const auto post = parser["form_params"];
+      if (post) {
+        const auto amount = parser["amount"];
+        const auto to_user = parser["to_user"];
+        const auto description = parser["description"];
+
+        if (!amount || !to_user || !description) {
+          res->writeStatus("400");
+          res->end(R"({"error":1,"message":"Missing data"})");
+          return;
+        }
+
+        const uint64_t now =
+            std::chrono::system_clock::now().time_since_epoch().count();
+
+        jwt::jwt_object obj{algorithm("HS256"), secret(baokimSecret),
+                            payload({
+                                {"iss", baokimIss},
+                            })};
+        nlohmann::json form_params{
+            {"amount", util::toInt(*amount)},
+            {"to_user", *to_user},
+            {"description", *description},
+        };
+
+        obj.add_claim("iat", now / 1000);
+        obj.add_claim("nbf", now);
+        obj.add_claim("exp", now + 50 * 1000);
+        obj.add_claim("form_params", form_params);
+
+        res->end(fmt::format(R"({{"error":"0","message":"ok","data":"{}"}})",
+                             obj.signature()));
+      } else {
+        jwt::jwt_object obj{algorithm("HS256"), secret(baokimSecret),
+                            payload({
+                                {"iss", baokimIss},
+                            })};
+        const uint64_t now =
+            std::chrono::system_clock::now().time_since_epoch().count();
+        obj.add_claim("iat", now / 1000);
+        obj.add_claim("nbf", now);
+        obj.add_claim("exp", now + 50 * 1000);
+        res->end(fmt::format(R"({{"error":"0","message":"ok","data":"{}"}})",
+                             obj.signature()));
+        res->end("ok");
+      }
+    };
+  }
+  auto transferMoneyBaokimRoute() {
+    return [&](auto *res, auto *req) {
+      std::shared_ptr<bool> aborted = std::make_shared<bool>(false);
+
+      res->onAborted([=]() { *aborted = true; });
+
+      res->writeHeader("Content-Type", "application/json");
+      res->writeHeader("Access-Control-Allow-Origin", "*");
+
+      BodyParser parser(req->getQuery());
+      const auto sessionId = parser["sessionId"];
+
+      msg::AccountReponse accountReponse;
+
+      if (!sessionId) {
+        accountReponse.set_error(1);
+        accountReponse.set_message("Expected sessionId");
+        res->end(detail::messageToJsonString(accountReponse));
+        return;
+      }
+
+      const auto auth = sessionService.authen(*sessionId);
+      if (!auth) {
+        accountReponse.set_error(1);
+        accountReponse.set_message("Auth fail");
+        res->end(detail::messageToJsonString(accountReponse));
+        return;
+      }
+
+      const uint64_t userId = auth->id();
+
+      res->onData([buff = std::string(), aborted, res, userId,
+                   this](std::string_view data, bool last) mutable {
+        if (*aborted) {
+          return;
+        }
+
+        buff.append(data.data(), data.size());
+
+        if (!last) {
+          return;
+        }
+
+        srv::TransferRequest transferRequest;
+        if (!google::protobuf::util::JsonStringToMessage(buff, &transferRequest)
+                 .ok()) {
+          res->end(R"({"error":"1","message":"invalid request"})");
+          return;
+        }
+        if (!util::is_uuid(transferRequest.id())) {
+          res->end(
+              R"({"error":"1","message":"request id is not in uuid format"})");
+          return;
+        }
+
+        // TODO: check user exists
+        transferRequest.set_user_id(userId);
+
+        if (transferRequest.user_id() == transferRequest.to_user()) {
+          res->end(
+              R"({"error":"1","message":"can't transfer money to yourself"})");
+          return;
+        }
+
+        const auto [channelStatus, channel] =
+            channelService.getPrivateChannel(userId, transferRequest.to_user());
+
+        msg::AccountReponse response;
+
+        if (!channelStatus.ok()) {
+          response.set_error(channelStatus.error_code());
+          response.set_message(channelStatus.error_message());
+          res->end(detail::messageToJsonString(response));
+          return;
+        }
+        //
+        // const auto [moneyStatus, account] =
+        //    moneyService.transfer(transferRequest);
+        //
+        // if (!moneyStatus.ok()) {
+        //  response.set_error(moneyStatus.error_code());
+        //  response.set_message(moneyStatus.error_message());
+        //  res->end(detail::messageToJsonString(response));
+        //  return;
+        //}
+        msg::Account account;
+        account.set_user_id(userId);
+
+        logger::info(transferRequest.DebugString());
+        logger::info(channel.DebugString());
+
+        msg::Chat chat;
+        chat.set_channel_id(channel.id());
+        chat.set_user_id(userId);
+        chat.mutable_content()->set_type(
+            msg::ChatContent_ChatContentType_MONEY);
+        *chat.mutable_timestamp() =
+            google::protobuf::util::TimeUtil::GetCurrentTime();
+        chat.mutable_content()->set_content(
+            fmt::format("{},{},{}", "baokim", transferRequest.amount(),
+                        transferRequest.message()));
+
+        producer.produceChatMessage(chat.SerializeAsString());
+
+        response.set_message("transfer done");
         *response.mutable_data() = std::move(account);
         res->end(detail::messageToJsonString(response));
       });

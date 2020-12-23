@@ -31,6 +31,11 @@
     "expired" : 2592000
   },
 
+  "baokim" : {
+    "iss" : "TBkekIzxY1y0YxjubhdJI1mVjGqs2CsR",
+    "secret" :"8bNTNQe8PbCWUsAzFo9Y8cB0Af6BdNji" 
+  },
+
   "redis" : {
     "uri" : "tcp://127.0.0.1:6379",
     "client" : {

@@ -108,13 +108,17 @@ private:
                                  const google::protobuf::Message &message) {
     //logger::info("broadCast: {} {}", channelId, message.DebugString());
     const auto members = channelService.getMembersChannel(channelId);
+    //logger::info("members: ");
+    //for(auto it = std::begin(*members); it != std::end(*members); ++it) {
+    //  logger::info("{}", it->DebugString());
+    //}
 
     if (members) {
       // TODO: check return value
       const auto binaryMessage = message.SerializeAsString();
       std::for_each(std::begin(*members), std::end(*members),
                     [&](const msg::Channel::Member &mem) {
-                      //logger::info("send to user: {}", mem.user_id());
+                      // logger::info("send to user: {}", mem.user_id());
                       sendToUser(mem.user_id(), binaryMessage);
                     });
     } else {
@@ -147,9 +151,9 @@ private:
   }
 
   void handleTypingMessageImpl(std::string_view message) {
-    msg::Typing typing;
-    if (typing.ParseFromArray(message.data(), message.size())) {
-      broadCastMessageToChannel(typing.channel_id(), typing);
+    msg::WebSocketOutgoingMessage out;
+    if (out.ParseFromArray(message.data(), message.size())) {
+      broadCastMessageToChannel(out.typing().channel_id(), out);
     } else {
       logger::error("can't parse message");
     }
@@ -210,7 +214,7 @@ private:
         const uint64_t userId = userData->userId;
         constexpr size_t maxMessageSize = 65536;
 
-        //logger::info("onmessage: {}", incoming.DebugString());
+        // logger::info("onmessage: {}", incoming.DebugString());
 
         switch (incoming.type_case()) {
         case msg::WebSocketIncomingMessage::TypeCase::kChat:
@@ -238,10 +242,16 @@ private:
           messageProducer.publishStatus(incoming.status().SerializeAsString());
           break;
 
-        case msg::WebSocketIncomingMessage::TypeCase::kTyping:
-          incoming.mutable_typing()->set_user_id(userId);
-          messageProducer.publishTyping(incoming.status().SerializeAsString());
-          break;
+        case msg::WebSocketIncomingMessage::TypeCase::kTyping: {
+          msg::WebSocketOutgoingMessage out;
+          msg::Typing typing;
+          typing.set_user_id(userId);
+          typing.set_channel_id(incoming.typing().channel_id());
+          typing.set_is_typing(incoming.typing().is_typing());
+          // typing.PrintDebugString();
+          *out.mutable_typing() = std::move(typing);
+          messageProducer.publishTyping(out.SerializeAsString());
+        } break;
 
         default:
           logger::error("Invalid ws message");

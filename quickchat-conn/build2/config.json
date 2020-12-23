@@ -1,0 +1,43 @@
+{
+  "appName": "quickchat-conn",
+
+  "channel-service" : {
+    "uri" : "127.0.0.1:4001",
+    "apikey" : "channel-service-key"
+  },
+
+  "redis" : {
+    "uri" : "tcp://127.0.0.1:6379",
+    "client" : {
+    },
+    "subscriber" : {
+      "channels" : ["quickchat-conn:messages:*", "quickchat-conn:notifications:*"]
+    },
+    "publisher" : {
+      "status": "quickchat-conn:messages:status",
+      "typing": "quickchat-conn:messages:typing"
+    }
+  },
+
+  "kafka" : {
+    "config" : {
+      "bootstrap.servers" : "127.0.0.1:9092",
+      "topic" : {
+        "chat" : "quickchat-messages.chat",
+        "seen" : "quickchat-messages.seen"
+      }
+    }
+  },
+
+  "websocket" : {
+    "port" : 9002,
+    "maxPayloadLength" : 16384,
+    "idleTimeout" : 3600,
+    "maxBackpressure" : 1048576
+  },
+
+  "snowflake" : {
+    "workerid" : 1,
+    "datacenterid" : 1
+  }
+}

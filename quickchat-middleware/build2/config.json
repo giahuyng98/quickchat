@@ -1,0 +1,61 @@
+{
+  "appName": "quickchat-middleware",
+  "port" : 3010,
+
+  "channel-service" : {
+    "uri" : "127.0.0.1:4001",
+    "apikey" : "channel-service-key"
+  },
+
+  "message-service" : {
+    "uri" : "127.0.0.1:4002",
+    "apikey" : "message-service-key"
+  },
+
+  "user-service" : {
+    "uri" : "127.0.0.1:10000",
+    "apikey" : "user-service-key"
+  },
+
+  "money-service" :{
+    "uri" : "127.0.0.1:4004",
+    "apikey" : "money-service-key"
+  },
+
+ "friend-service" :{
+    "uri" : "127.0.0.1:4005",
+    "apikey" : "friend-service-key"
+  },
+
+  "session" : {
+    "expired" : 2592000
+  },
+
+  "redis" : {
+    "uri" : "tcp://127.0.0.1:6379",
+    "client" : {
+    },
+    "subscriber" : {
+      "channels" : ["quickchat-conn:messages:*", "quickchat-conn:notifications:*"]
+    },
+    "publisher" : {
+      "status": "quickchat-conn:messages:status",
+      "typing": "quickchat-conn:messages:typing"
+    }
+  },
+
+  "kafka" : {
+    "config" : {
+      "bootstrap.servers" : "127.0.0.1:9092",
+      "topic" : {
+        "chat" : "quickchat-messages.chat",
+        "seen" : "quickchat-messages.seen"
+      }
+    }
+  },
+
+  "snowflake" : {
+    "workerid" : 1,
+    "datacenterid" : 1
+  }
+}
