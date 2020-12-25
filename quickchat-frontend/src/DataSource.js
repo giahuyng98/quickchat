@@ -15,7 +15,6 @@ const DataSource = {
     const res = await fetch(URL.getBaokimKeyUrl(sessionId)).then(data => data.json())
     DataSource.baokimKey = res.data
     return DataSource.baokimKey
-    //return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDIwLTEyLTIxVDE1OjMxOjAwLjUxMFoiLCJpc3MiOiJUQmtla0l6eFkxeTBZeGp1YmhkSkkxbVZqR3FzMkNzUiIsImp0aSI6InhrYWtkZmtzZGZsYXNkIiwibmJmIjoxNjA4NTY3MTU5MzMyLCJleHAiOjE2MDg1NjcyMDkzMzIsImZvcm1fcGFyYW1zIjp7InRvX3VzZXIiOiJyb3lhbGRlYWQ5OEBnbWFpbC5jb20iLCJhbW91bnQiOiIyMDAwIiwiZGVzY3JpcHRpb24iOiJUZXN0IiwiZmVlX3BheWVyIjoiMiIsInR4bl9tb2RlIjoiMSJ9fQ.ZD7EdYSqBz1BvL5TU7avTVUIVc9S_5S2fTK0IKVQguM"
   },
   getBaoKimCreateOrderUrl: (jwt) => {
     return `https://api.baokim.vn/payment/api/v4/order/send?jwt=${jwt}`
